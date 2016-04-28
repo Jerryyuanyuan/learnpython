@@ -31,11 +31,13 @@ goal_lists=goal_string.split("0")
 the_max = 0
 for li in goal_lists:
     length = len(li)
-    if len(li)<13:
+    if length<13:
         continue
     else:
-        for i in range(length-13):
-            s = li[i:i+12]
+        for i in range(length-12):
+            s = li[i:i+13]
+            print("用于计算的字符串："+s)
+            print(len(s))
             res = mul_13(s)
             if res > the_max:
                 the_max = res
